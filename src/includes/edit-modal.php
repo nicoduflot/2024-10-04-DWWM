@@ -10,7 +10,7 @@
                 <input type="text" name="nom" id="nom" />
             </p>
             <p>
-                <label for="console">Nom du jeu</label>
+                <label for="console">Console</label>
                 <input type="text" name="console" id="console" />
             </p>
             <p>
