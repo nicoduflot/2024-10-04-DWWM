@@ -25,9 +25,44 @@ use App\Jeuvideo;
                     <h2>Les Jeux vidéos en vente</h2>
                 </header>
                 <?php
-                $jv = Jeuvideo::getJVById();
-                Tools::prePrint($jv);
+                $listJv = Jeuvideo::getJVById();
+                Tools::prePrint($listJv[0]);
                 ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>nom</th>
+                            <th>console</th>
+                            <th>nbre_joueurs_max</th>
+                            <th>prix</th>
+                            <th>prenom</th>
+                            <th>commentaires</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach($listJv as $jv){
+                            ?>
+                            <tr>
+                                <td><?= $jv['nom'] ?></td>
+                                <td><?= $jv['console'] ?></td>
+                                <td><?= $jv['nbre_joueurs_max'] ?></td>
+                                <td><?= $jv['prix'] ?></td>
+                                <td><?= $jv['prenom'] ?></td>
+                                <td><?= $jv['commentaires'] ?></td>
+                                <td>
+                                    <button class="edit" data-action="edit" data-id="<?= $jv['ID'] ?>">
+                                        Editer
+                                    </button><br />
+                                    <a href="./src/delete_game.php?id=<?= $jv['ID'] ?>"><button class="delete">Supprimer</button></a>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </article>
         </section>
     </main>
