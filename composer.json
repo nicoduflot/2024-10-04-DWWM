@@ -11,5 +11,10 @@
     "minimum-stability": "stable",
     "require": {
         "doctrine/collections": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Utils\\": "src/classes/utils"
+        }
     }
 }
