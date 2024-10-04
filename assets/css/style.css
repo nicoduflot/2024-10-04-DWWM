@@ -1,0 +1,44 @@
+/* on  peut mettre du commentaire avant un import mais JAMAIS ,une déclaration css autre qu'un autre import */
+@import url('./roboto.css');
+
+:root{
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    --site-bg-color: white;
+    --site-color: rgb(51, 51, 51);
+    --table-border: rgb(222, 52, 0);
+    --edit-button: rgb(25, 130, 25);
+    --edit-button-hover: rgba(25, 130, 25, 0.8);
+    --cancel-button: rgb(224, 140, 7);
+    --cancel-button-hover: rgba(224, 140, 7, 0.8);
+    --gutter-x: 0.5rem;
+    --gutter-y: 0.5rem;
+    --colonne-1-2: calc( (100% / 2) - var(--gutter-x));
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+body{
+    margin: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table th, table td{
+    border: 1px solid var(--table-border);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
