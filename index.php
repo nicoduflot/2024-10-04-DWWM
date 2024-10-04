@@ -2,6 +2,15 @@
 require_once('./vendor/autoload.php');
 use Utils\Tools;
 use App\Jeuvideo;
+
+if( isset($_POST['ID']) && $_POST['ID'] !== '' ){
+    $params = $_POST;
+    unset($params['prenom']);
+    tools::prePrint($params);
+    Jeuvideo::updateJV($_POST['ID'], $params);
+    header('Location: ./');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,7 +35,7 @@ use App\Jeuvideo;
                 </header>
                 <?php
                 $listJv = Jeuvideo::getJVById();
-                Tools::prePrint($listJv[0]);
+                //Tools::prePrint($listJv[0]);
                 ?>
                 <table>
                     <thead>
@@ -68,6 +77,7 @@ use App\Jeuvideo;
     </main>
     <?php
     include './src/includes/footer.php';
+    include './src/includes/edit-modal.php';
     ?>
 </body>
 </html>
