@@ -1,3 +1,8 @@
+<?php
+require_once('./vendor/autoload.php');
+use Utils\Tools;
+use App\Jeuvideo;
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,7 +24,10 @@
                 <header>
                     <h2>Les Jeux vidéos en vente</h2>
                 </header>
-                
+                <?php
+                $jv = Jeuvideo::getJVById();
+                Tools::prePrint($jv);
+                ?>
             </article>
         </section>
     </main>

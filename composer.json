@@ -14,7 +14,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Utils\\": "src/classes/utils"
+            "Utils\\": "src/classes/utils",
+            "App\\": "src/classes/app"
         }
     }
 }
