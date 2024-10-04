@@ -15,4 +15,22 @@ class Tools implements Config_interface{
         }
         return $bdd;
     }
+
+    public static function modBdd($sql, $params = []){
+        $bdd = self::setBdd();
+        $req = $bdd->prepare($sql);
+        $req->execute($params);
+        return $req;
+    }
+
+    public static function insertBdd($sql, $params = []){
+        $bdd = self::setBdd();
+        $req = $bdd->prepare($sql);
+        $req->execute($params);
+        return $bdd->lastInsertId();
+    }
+
+    public static function prePrint($data){
+        echo '<pre>'. var_dump($data) .'</pre>';
+    }
 }
